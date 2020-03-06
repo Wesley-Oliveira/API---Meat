@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/Wesley-Oliveira/API---Meat#readme",
   "dependencies": {
+    "mongoose": "^5.9.3",
     "restify": "^8.5.1"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.7.3",
     "@types/restify": "5.0.6"
   }
 }
