@@ -1,0 +1,26 @@
+{
+  "name": "API---Meat",
+  "version": "1.0.0",
+  "description": "Simple API for online ordering. Using NodeJs, Restify and MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wesley-Oliveira/API---Meat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wesley-Oliveira/API---Meat/issues"
+  },
+  "homepage": "https://github.com/Wesley-Oliveira/API---Meat#readme",
+  "dependencies": {
+    "restify": "^8.5.1"
+  },
+  "devDependencies": {
+    "@types/restify": "5.0.6"
+  }
+}
