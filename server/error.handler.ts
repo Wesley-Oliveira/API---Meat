@@ -21,7 +21,7 @@ export const handleError = (req: restify.Request, resp: restify.Response, err, d
                 messages.push({ message: err.errors[name].message });
             }
             err.toJSON = () => ({
-                errors: messages;
+                errors: messages
             });
             break;
     }
