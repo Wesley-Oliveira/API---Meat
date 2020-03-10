@@ -48,6 +48,38 @@ test('post /users', () => {
         }).catch(fail);
 })
 
+//Caso queira testar apenas com um basta adicionar após o teste .only
+test('get /users/aaaaa - not found', () => {
+    return request(adress)
+        .get('/users/aaaaa')
+        .then(response => {
+            expect(response.status).toBe(404);
+    }).catch(fail);
+});
+
+test('patch /usuers/:id', () => {
+    return request(adress)
+        .post('/users')
+        .send({
+            name: 'usuario2',
+            email: 'usuario2@email.com',
+            password: '123456',
+        })
+        .then(response => request(adress)
+                          .patch(`/users/${response.body._id}`)
+                          .send({
+                              name: 'usuario2 - patch'
+                          }))
+        .then(response => {
+            expect(response.status).toBe(200);
+            expect(response.body._id).toBeDefined();
+            expect(response.body.name).toBe('usuario2 - patch');    
+            expect(response.body.email).toBe('usuario2@email.com');    
+            expect(response.body.password).toBeUndefined();
+        })
+        .catch(fail);
+});
+
 afterAll(() => {
     return server.shutDown();
 });
