@@ -1,3 +1,4 @@
+import * as fs from 'fs';
 import * as restify from 'restify';
 import * as mongoose from 'mongoose';
 import { environment } from '../common/environment';
@@ -23,7 +24,9 @@ export class Server{
                 
                 this.application = restify.createServer({
                     name: 'meat-api',
-                    version: '1.0.0'
+                    version: '1.0.0',
+                    certificate: fs.readFileSync('./security/keys/cert.pem'),
+                    key: fs.readFileSync('./security/keys/key.pem'),
                 });
                 
                 this.application.use(restify.plugins.queryParser());
